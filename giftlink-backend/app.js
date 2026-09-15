@@ -4,7 +4,9 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const pinoLogger = require('./logger');
+const authRoutes = require('./routes/authRoutes');
 
+app.use('/api/auth', authRoutes);
 const connectToDatabase = require('./models/db');
 const { loadData } = require('./util/import-mongo/index');
 
